@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    environment:
+      DISPLAY: ${DISPLAY:?err}
+    user: ${UID:?err}
+    volumes:
+      - /tmp/.X11-unix/X0:/tmp/.X11-unix/X0:rw
+    command: xeyes
+    # command: echo "UID=${UID}, GID=${GID}, DISPLAY=${DISPLAY}"
